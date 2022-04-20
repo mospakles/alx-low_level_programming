@@ -13,7 +13,7 @@ return (n >= '0' &&  n <= '9');
 
 /**
  *_atoi - convert a string to an integer
- *@: String
+ *@s: String
  *Return: Return the num
  */
 
