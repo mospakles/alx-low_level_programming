@@ -3,14 +3,13 @@
 
 /**
  * print_diagsums - the sum of the two diagonals of a square matrix of integers
- * @a: 2d array of chars
- * @size: number matrix
+ * @a: pointer that contains the address of the beginning of the matrix
+ * @n: size of the square matrix
  * Return: void
  */
 
-void print_diagsums(int *a, int size)
+void print_diagsums(int *a, int n)
 {
-/*Declaring variables*/
 int i;
 
 unsigned int sum, sum1;
@@ -20,11 +19,10 @@ sum1 = 0;
 
 for (i = 0; i < n; i++)
 {
-/*sums for diagsums*/
-sum += a[(n + 1) * 1];
+sum += a[(n + 1) * i];
 sum1 += a[(n - 1) * (i + 1)];
 }
 
-printf("%i, %i\n", sum, sum1);
+printf("%d, %d\n", sum, sum1);
 
 }
