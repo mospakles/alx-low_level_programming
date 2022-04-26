@@ -1,30 +1,42 @@
 #include "main.h"
 
 /**
- * _strpbrk - matches any character specified
- * @s: This is the C string to be scanned.
- * @accept:character in str1 that matches one of the characters in str2
- * Return: string s that matches any character specified in accept
+ * _strspn - Locates a character in a string
+ * @s: This is the main C string to be scanned.
+ * @accept: This is the string containing the list of characters to match in s
+ * Return: return count
  **/
 
-char *_strpbrk(char *s, char *accept)
+unsigned int _strspn(char *s, char *accept)
+
 {
+int i, j;
+int count = 0;
+char *str1, *str2;
 
-int j;
+str1 = s;
+str2 = accept;
 
-while (*s != '\0') /*Declaring WHILE*/
+i = 0;
+while (str1[i] != '\0') /*Declaring WHILE *s */
 {
 j = 0;
-while (accept[j] != '\0')  /*Evaluating *accept*/
+while (str2[j] != '\0') /*Declaring WHILE *accept*/
 {
-if (*s == accept[j])
+if (str2[j] == str1[i]) /*Evaluate condition*/
 {
-return (s);
+count++; /*count number*/
+break;
 }
 j++; /*add j+1*/
 }
 
-s++; /*add s+1*/
+if (s[i] != accept[j]) /*If aren't equals*/
+{
+break;
 }
-return (0);
+
+i++; /*add x+1*/
+}
+return (count); /*return the value of count*/
 }
