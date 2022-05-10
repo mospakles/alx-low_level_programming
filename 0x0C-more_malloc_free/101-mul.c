@@ -25,7 +25,28 @@ exit(98); }
 
 }
 mul = atol(argv[1]) * atol(argv[2]);
-
 printf("%lu\n", mul);
 return (0);
+}
+
+/**
+ * _checknum - determines length of the number
+ * and checks if number is in base 10.
+ * @argv: arguments vector.
+ * @n: row of the array.
+ * Return: length of the number.
+ */
+
+int _checknum(char *argv[], int n)
+{
+int ln;
+
+for (ln = 0; argv[n][ln]; ln++)
+if (!isdigit(argv[n][ln]))
+{
+printf("Error\n");
+exit(98);
+}
+
+return (ln);
 }
