@@ -23,7 +23,7 @@ for (i = 0; text_content[i]; i++)
 ;
 fwrite = write(file, text_content, i);
 if (fwrite == -1)
-return (-);
+return (-1);
 }
 close(file);
 return (1);
